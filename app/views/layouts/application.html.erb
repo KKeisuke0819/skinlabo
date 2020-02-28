@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skinlabo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= favicon_link_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="main-container">
+      <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed"data-toggle="collapse"data-target="#navbarEexample8">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand">
+                Skinlabo
+              </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarEexample8">
+              <ul class="nav navbar-nav">
+                <% if admin_signed_in? %>
+                  <li><%= link_to "商品一覧", admin_products_path, class: "drawer-menu-item" %></li>
+                  <li><%= link_to "会員一覧", admin_users_path, class: "drawer-menu-item" %></li>
+                  <li><%= link_to "カテゴリー管理", admin_genres_path, class: "drawer-menu-item" %></li>
+                  <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "drawer-menu-item" %></li>
+                <% elsif user_signed_in? %>
+                  <li><%= link_to "HOME", products_path, class: "drawer-menu-item" %></li>
+                  <li><%= link_to "マイページ", user_path(current_user), class: "drawer-menu-item" %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "drawer-menu-item" %></li>
+                <% else %>
+                  <li><%= link_to "HOME", root_path, class: "drawer-menu-item" %></li>
+                  <li><%= link_to "新規会員登録", new_user_registration_path, class: "drawer-menu-item" %></li>
+                <% end %>
+              </ul>
+              <% if admin_signed_in? %>
+                <p class="navbar-text navbar-right">管理ログイン中</p>
+              <% elsif user_signed_in? %>
+                <p class="navbar-text navbar-right">ログイン中</p>
+              <% else %>
+                <p class="navbar-text navbar-right"></p>
+              <% end %>
+            </div>
+          </div>
+        </nav>
+      </header>
+        <div class="container">
+            <%= yield %>
+        </div>
+      </div>
+    <div class="footer">
+      <p>掲載の情報・画像など、すべてのコンテンツの無断複写・転載を禁じます。
+          クチコミなどの投稿はあくまで投稿者の感想です。個人差がありますのでご注意ください。</p>
+      <p>© 2020 skinlabo.</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<div class="row">
+  <h2>カテゴリー追加・一覧</h2>
+  <h3>カテゴリー追加
+    <%= form_for [:admin, @genre] do |f| %>
+    <%= f.text_field :variety %>カテゴリー
+    <%= f.submit "追加" %>
+    <% end %>
+  </h3>
+  <div class = "col-lg-8">
+    <table class="table table-inverse">
+      <% @genres.each do |genre| %>
+          <tr><th>カテゴリー</th>
+              <td><%= genre.variety %></td></tr>
+          <td><%= link_to "編集する", edit_admin_genre_path(genre) %></td>
+      <% end %>
+    </table>
+  </div>
+</div>

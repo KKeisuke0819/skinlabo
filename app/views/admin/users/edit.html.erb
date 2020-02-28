@@ -1,0 +1,24 @@
+<div class="row">
+	<h2>会員編集画面</h2>
+			<%= form_for [:admin, @user] do |f| %>
+			<p>氏名</p>
+			<%= f.text_field :user_name %>
+            <p>メールアドレス</p>
+            <%= f.email_field :email %>
+            <p>会員ステータス</p>
+
+            <% if @user.deleted_at.nil? %>
+             <label><%= f.radio_button :deleted_at, :true, {:checked => true} %>現会員</label>
+             <label><%= f.radio_button :deleted_at, :false %>退会済み</label>
+
+             <% else %>
+
+            <label><%= f.radio_button :deleted_at, :true %>現会員</label>
+
+            <label><%= f.radio_button :deleted_at, :false, {:checked => true} %>退会済み</label>
+
+            <% end %>
+
+            <p><%= f.submit "変更を保存する" %></p>
+            <% end %>
+</div>

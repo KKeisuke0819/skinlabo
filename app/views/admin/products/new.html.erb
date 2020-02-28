@@ -1,0 +1,23 @@
+<div class='row'>
+    <h2>商品新規登録画面</h2>
+      <%= form_for(@product, url: '/admin/products') do |f| %>
+      <div class='col-xs-5'>
+
+      <%= f.attachment_field :image %>
+      </div>
+      <div class='col-xs-5'>
+      <h4>商品名 <%= f.text_field :product_name,:size => 15 %></h4>
+
+      <h4>商品説明 <%= f.text_area :introduction, :size => 15 %></h4>
+
+      <h4>ジャンル  <%= f.select :genre_id, Genre.all.map { |str| str.variety } %></h4>
+
+      <h4>価格 <%= f.text_field :price, :size => 15 %></h4>
+
+      </div>
+      <div class='col-xs-2'>
+      <%= f.submit "新規登録" %>
+
+      </div>
+      <% end %>
+</div>

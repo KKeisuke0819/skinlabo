@@ -1,0 +1,9 @@
+
+	<div class="row">
+　    <h3>本当に退会しますか</h3>
+　    <h3>退会すると、会員情報登録や<br>
+	     これまでの購入履歴が閲覧できなくなります。<br>退会する場合は、「退会する」をクリックしてください。</h3>
+      <p><%= link_to "退会する", user_path(@user.id), method: :delete, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %></p>
+      <p><%= link_to "退会しない", edit_user_path(@user.id), class: "btn btn-primary" %></p>
+      </h3>
+    </div>

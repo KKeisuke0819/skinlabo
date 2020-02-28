@@ -1,0 +1,2 @@
+class Skingenre < ApplicationRecord
+end
