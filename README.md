@@ -1,24 +1,19 @@
-# 
+# Skinlabo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The online review site for skin products
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+The skinlabo is tool which help us finding the skin product match
 
-* System dependencies
+## Features
 
-* Configuration
+- Comment
+- Rank
+- Paginate
+- like
 
-* Database creation
+## Thanks
 
-* Database initialization
+This repository are my first original works.　I would like to express the deepest appreciation to teammates and mentor
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
