@@ -47,7 +47,7 @@
 					<% end %></p>
 					<br><%= product.product_name %><br>
 					<br><%= product.price %>円<br>
-					<br><%= link_to "#{product.comments.count} コメント", product_path(product.id) %>
+					<br><%= product.favorites.count %> いいね
 			</div>
 				<% end %>
 	</div></div>

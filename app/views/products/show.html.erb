@@ -3,7 +3,7 @@
       <%= attachment_image_tag @product, :image, :fill, 200, 200 %>
   </div>
 
-  <div class='product-data col-lg-6'>
+  <div class='product-data col-lg-9'>
     <table class="table table-inverse">
       <tr><th>商品名</th><td><%= @product.product_name %></td></tr>
       <tr><th>商品説明</th><td><%= @product.introduction %></td></tr>
@@ -39,6 +39,6 @@
         <div class="col-sm-12">
             <%= f.text_area :review, rows:'4', class: "form-control",placeholder: "コメントをここに" %>
         </div>
-    <%= f.submit "クチコミを投稿する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+    <%= f.submit "クチコミを投稿する", class: "btn btn-sm btn-base-1 mt-20 pull-right" %>
   <% end %>
 </div>
